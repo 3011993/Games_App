@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="bigTextStyle">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/md_theme_dark_inverseOnSurface</item>
+        <item name="android:textSize">24sp</item>
+        <item name="background">@color/md_theme_light_primary</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="smallTextStyle">
+
+        <item name="android:textColor">@color/md_theme_dark_inverseOnSurface</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="background">@color/md_theme_light_primary</item>
+        <item name="android:padding">2dp</item>
+
+        <item name="android:textSize">20sp</item>
+    </style>
+</resources>
