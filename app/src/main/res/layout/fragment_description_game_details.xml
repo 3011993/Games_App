@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="game"
-            type="com.example.gamesapp.domain.model.GameModel" />
+            name="specificGame"
+            type="com.example.gamesapp.domain.model.SpecificGameModel" />
 
     </data>
 
@@ -26,7 +26,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="36dp"
                 android:layout_marginEnd="32dp"
-                app:load_image="@{game.thumbnail}"
+                app:load_image="@{specificGame.thumbnail}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,13 +41,13 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:text="@{game.title}"
+                android:text="@{specificGame.title}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewSpecificGame" />
 
             <TextView
-                android:id="@+id/short_description"
+                android:id="@+id/developer"
                 style="@style/smallTextStyle"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
@@ -55,7 +55,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
                 android:background="@color/md_theme_light_primary"
-                android:text="@{game.shortDescription}"
+                android:text="@{specificGame.developer}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -69,10 +69,10 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
                 android:background="@color/md_theme_light_primary"
-                android:text="@{game.platform}"
+                android:text="@{specificGame.platform}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/short_description" />
+                app:layout_constraintTop_toBottomOf="@+id/developer" />
 
             <TextView
                 android:id="@+id/full_description"
@@ -84,7 +84,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="16dp"
                 android:background="@color/md_theme_light_primary"
-                android:text="@{game.shortDescription}"
+                android:text="@{specificGame.description}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

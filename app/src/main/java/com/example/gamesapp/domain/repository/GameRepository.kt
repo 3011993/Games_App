@@ -10,7 +10,7 @@ interface GameRepository {
 
     suspend fun getGame () : Flow<Resources<List<GameModel>>>
 
-    suspend fun getSpecificGame (gameId : Int) : Flow<Resources<SpecificGameModel>>
+    suspend fun getSpecificGame (gameId : String) : Flow<Resources<SpecificGameModel>>
 
 
 }

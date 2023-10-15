@@ -36,11 +36,11 @@ class GameRepositoryImpl @Inject constructor(
 
     }
 
-    override suspend fun getSpecificGame(gameId: Int): Flow<Resources<SpecificGameModel>> {
+    override suspend fun getSpecificGame(gameId: String): Flow<Resources<SpecificGameModel>> {
         return flow {
             emit(Resources.Loading<SpecificGameModel>())
             try {
-                val result = api.getDetailsFromSpecificGame(gameId).toSpecificGameModel()
+                val result = api.getGameById(gameId).toSpecificGameModel()
                 emit(Resources.Success<SpecificGameModel>(result))
             } catch (e: HttpException) {
                 emit(

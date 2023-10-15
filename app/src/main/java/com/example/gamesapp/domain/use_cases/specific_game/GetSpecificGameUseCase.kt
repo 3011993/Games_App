@@ -9,5 +9,5 @@ import javax.inject.Inject
 
 class GetSpecificGameUseCase @Inject constructor(private val repository: GameRepository) {
 
-    suspend operator fun invoke(gameId : Int) : Flow<Resources<SpecificGameModel>> = repository.getSpecificGame(gameId)
+    suspend operator fun invoke(gameId : String) : Flow<Resources<SpecificGameModel>> = repository.getSpecificGame(gameId)
 }

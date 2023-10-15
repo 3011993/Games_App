@@ -8,6 +8,7 @@ import com.example.gamesapp.base.BaseViewModel
 import com.example.gamesapp.common.Resources
 import com.example.gamesapp.domain.model.GameModel
 import com.example.gamesapp.domain.repository.GameRepository
+import com.example.gamesapp.domain.use_cases.get_games.GetGamesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -16,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class GameListViewModel @Inject constructor(
     application: Application,
-    private val repo: GameRepository
+    private val getGameUseCase: GetGamesUseCase
 ) :
     BaseViewModel(application) {
 
@@ -29,14 +30,16 @@ class GameListViewModel @Inject constructor(
 
     private fun getGameList() {
         viewModelScope.launch {
-            repo.getGame().collect { result ->
+            getGameUseCase().collect { result ->
                 when (result) {
                     is Resources.Success -> {
                         _gameList.value = result.data ?: emptyList()
                     }
+
                     is Resources.Loading -> {
                         showLoadingProgress.value = true
                     }
+
                     is Resources.Error -> {
                         showErrorToast.value = result.message
                     }

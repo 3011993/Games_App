@@ -9,23 +9,24 @@
         android:id="@+id/gamesListFragment"
         android:name="com.example.gamesapp.presentation.fragments.game_list.GamesListFragment"
         android:label="Games List"
-        tools:layout="@layout/fragment_games_home" >
+        tools:layout="@layout/fragment_games_home">
         <action
             android:id="@+id/action_gamesHomeFragment_to_descriptionGameDetails"
             app:destination="@id/specificGameFragment" />
+
 
     </fragment>
     <fragment
         android:id="@+id/specificGameFragment"
         android:name="com.example.gamesapp.presentation.fragments.specific_game.SpecificGameFragment"
         android:label="Game Details"
-        tools:layout="@layout/fragment_description_game_details" >
+        tools:layout="@layout/fragment_description_game_details">
         <action
             android:id="@+id/action_descriptionGameDetails_to_gamesHomeFragment"
             app:destination="@id/gamesListFragment" />
         <argument
-            android:name="game"
-            app:argType="com.example.gamesapp.domain.model.GameModel"/>
+            android:name="id"
+            app:argType="integer" />
     </fragment>
 
 </navigation>

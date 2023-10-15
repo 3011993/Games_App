@@ -36,9 +36,6 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        viewModel.showErrorToast.observe(this, Observer {
-            Toast.makeText(activity, it, Toast.LENGTH_LONG).show()
-        })
 
         viewModel.navigationCommand.observe(this) { command ->
             when (command) {
