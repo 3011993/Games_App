@@ -1,5 +1,6 @@
 package com.example.gamesapp.di
 
+import com.example.gamesapp.data.db.GameDao
 import com.example.gamesapp.data.remote.GamesApi
 import com.example.gamesapp.data.repository.GameRepositoryImpl
 import com.example.gamesapp.domain.repository.GameRepository
@@ -17,8 +18,8 @@ object GameRepositoryModule {
 
     @Provides
     @Singleton
-    fun getGameRepository(api: GamesApi): GameRepository {
-        return GameRepositoryImpl(api)
+    fun getGameRepository(dao : GameDao,api: GamesApi): GameRepository {
+        return GameRepositoryImpl(dao,api)
 
     }
 

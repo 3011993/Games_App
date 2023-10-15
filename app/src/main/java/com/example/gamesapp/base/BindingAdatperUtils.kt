@@ -17,8 +17,6 @@ fun loadImage(imageView: ImageView, image: String?) {
         Glide.with(imageView)
             .load(image)
             .into(imageView)
-
-
     }
 }
 

@@ -9,20 +9,16 @@ import androidx.databinding.ViewDataBinding
 abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
 
     @LayoutRes
-    abstract fun getLayoutRes() : Int
+    abstract fun getLayoutRes(): Int
 
-    protected lateinit var binding : T
+    protected lateinit var binding: T
         private set
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        binding = DataBindingUtil.setContentView(this,getLayoutRes())
-        DataBindingUtil.setContentView<T>(this,getLayoutRes()).apply {
-             binding = this
+        DataBindingUtil.setContentView<T>(this, getLayoutRes()).apply {
+            binding = this
         }
 
     }
-
-
-
 }
