@@ -7,5 +7,6 @@ data class SpecificGameModel (
     val platform: String ,
     val thumbnail: String,
     val developer: String,
-    val genre : String
+    val genre : String,
+    val status: String
 )

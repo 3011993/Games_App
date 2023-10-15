@@ -29,6 +29,7 @@ fun SpecificGameDto.toSpecificGameModel(): SpecificGameModel {
         platform = platform,
         title = title,
         genre = genre,
-        thumbnail = thumbnail
+        thumbnail = thumbnail,
+        status = status
     )
 }

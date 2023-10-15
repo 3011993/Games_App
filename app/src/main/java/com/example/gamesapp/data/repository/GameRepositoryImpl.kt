@@ -49,7 +49,8 @@ class GameRepositoryImpl @Inject constructor(
                     )
                 )
 
-            } catch (e: Exception) {
+            }
+            catch (e: Exception) {
                 emit(
                     Resources.Error<SpecificGameModel>(
                         "couldn't reach to the server,please check your connection"

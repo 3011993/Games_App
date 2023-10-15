@@ -36,6 +36,7 @@ class GamesListFragment : BaseFragment<FragmentGamesHomeBinding>() {
         viewModel.gameList.observe(viewLifecycleOwner) { list ->
             adapter.submitList(list)
         }
+
     }
 
 }

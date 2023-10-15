@@ -37,7 +37,10 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        viewModel.navigationCommand.observe(this) { command ->
+        viewModel.showErrorToast.observe(viewLifecycleOwner){
+            Toast.makeText(requireContext(),it,Toast.LENGTH_SHORT).show()
+        }
+        viewModel.navigationCommand.observe(viewLifecycleOwner) { command ->
             when (command) {
                 is NavigationCommand.To -> findNavController().navigate(command.directions)
                 is NavigationCommand.Back -> findNavController().popBackStack()

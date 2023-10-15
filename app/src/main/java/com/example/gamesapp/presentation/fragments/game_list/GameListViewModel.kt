@@ -33,6 +33,7 @@ class GameListViewModel @Inject constructor(
             getGameUseCase().collect { result ->
                 when (result) {
                     is Resources.Success -> {
+                        showLoadingProgress.value = false
                         _gameList.value = result.data ?: emptyList()
                     }
 
@@ -41,6 +42,7 @@ class GameListViewModel @Inject constructor(
                     }
 
                     is Resources.Error -> {
+                        showLoadingProgress.value = false
                         showErrorToast.value = result.message
                     }
                 }

@@ -32,6 +32,7 @@ class SpecificGameFragment : BaseFragment<FragmentDescriptionGameDetailsBinding>
 
         viewModel.specificGame.observe(viewLifecycleOwner) {
             binding.specificGame = it
+            Log.i("viewModel","it")
         }
 
 
