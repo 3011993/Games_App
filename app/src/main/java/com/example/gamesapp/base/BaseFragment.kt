@@ -35,9 +35,6 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        viewModel.errorText.observe(viewLifecycleOwner){
-
-        }
 
         viewModel.navigationCommand.observe(viewLifecycleOwner) { command ->
             when (command) {

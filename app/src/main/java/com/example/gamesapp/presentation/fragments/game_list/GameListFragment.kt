@@ -26,9 +26,7 @@ class GamesListFragment : BaseFragment<FragmentGamesHomeBinding>() {
                 )
         }
 
-        viewModel.errorText.observe(viewLifecycleOwner){
-            binding.errorTextView.text = it
-        }
+
         val adapter = GameLiveListAdapter(listener)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel

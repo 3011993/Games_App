@@ -42,15 +42,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/errorTextView"
-            style="@style/bigTextStyle"
-            setVisibility="@{viewModel.showError}"
+            android:id="@+id/noDataTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/design_default_color_error"
-            app:layout_constraintBottom_toBottomOf="@+id/game_live_recyclerview"
+            setVisibility="@{viewModel.showError}"
+            android:gravity="center"
+            android:text="@string/no_data"
+            style="@style/bigTextStyle"
+            android:textColor="@color/md_theme_light_error"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:drawableTopCompat="@drawable/ic_no_data" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

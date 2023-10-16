@@ -30,7 +30,7 @@ class GameLiveListAdapter(private val onClickListener: OnClickListener) :
         val currentItem = getItem(position)
         holder.binding.game = currentItem
         holder.binding.executePendingBindings()
-        holder.itemView.setOnClickListener {
+        holder.binding.showMoreButton.setOnClickListener {
             onClickListener.setOnClickListener(currentItem)
         }
 
