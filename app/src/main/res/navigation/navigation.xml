@@ -23,7 +23,9 @@
         tools:layout="@layout/fragment_description_game_details">
         <action
             android:id="@+id/action_descriptionGameDetails_to_gamesHomeFragment"
-            app:destination="@id/gamesListFragment" />
+            app:destination="@id/gamesListFragment"
+            app:popUpTo="@id/gamesListFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="id"
             app:argType="integer" />

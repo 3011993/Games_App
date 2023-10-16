@@ -2,8 +2,11 @@ package com.example.gamesapp.presentation.fragments.specific_game
 
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.gamesapp.R
 import com.example.gamesapp.base.BaseFragment
 import com.example.gamesapp.databinding.FragmentDescriptionGameDetailsBinding
@@ -29,10 +32,16 @@ class SpecificGameFragment : BaseFragment<FragmentDescriptionGameDetailsBinding>
 
         viewModel.specificGame.observe(viewLifecycleOwner) {
             binding.specificGame = it
-            Log.i("viewModel","it")
         }
 
 
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController()) ||
+                super.onOptionsItemSelected(item)
+    }
+
+
 }
+

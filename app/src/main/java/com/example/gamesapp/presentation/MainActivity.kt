@@ -3,6 +3,9 @@ package com.example.gamesapp.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.gamesapp.R
 import com.example.gamesapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -15,5 +18,14 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val navController = this.findNavController(R.id.navHost)
+        NavigationUI.setupActionBarWithNavController(this,navController)
+
+    }
+
+    override fun onNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.navHost)
+        return navController.navigateUp() || super.onNavigateUp()
     }
 }
