@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
@@ -40,6 +41,9 @@ class GamesListFragment : BaseFragment<FragmentGamesHomeBinding>() {
 
         viewModel.gameList.observe(viewLifecycleOwner) { list ->
             adapter.submitList(list)
+        }
+        viewModel.errorText.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
         }
 
         val menuHost: MenuHost = requireActivity()

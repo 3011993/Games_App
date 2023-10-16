@@ -30,7 +30,7 @@ class GameListViewModel @Inject constructor(
         getGameList()
     }
 
-    fun getGameList() {
+    private fun getGameList() {
         viewModelScope.launch(Dispatchers.IO) {
             getGameUseCase().collect { result ->
                 when (result) {
@@ -48,12 +48,11 @@ class GameListViewModel @Inject constructor(
 
                     is Resources.Error -> {
                         showLoadingProgress.postValue(false)
-                        showError.postValue(true)
                         errorText.postValue(result.message)
+                        _gameList.postValue(result.data!!.map { it.toGameModel() })
                     }
                 }
             }
-
         }
     }
 

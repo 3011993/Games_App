@@ -26,12 +26,17 @@ class GameRepositoryImpl @Inject constructor(
                 dao.insertAllGames(*result)
                 emit(Resources.Success<List<GameDb>>(result.toList()))
             } catch (e: HttpException) {
-                emit(Resources.Error<List<GameDb>>(e.message ?: "An unexpected error occurred"))
+                emit(
+                    Resources.Error<List<GameDb>>(
+                        e.message ?: "An unexpected error occurred")
+                )
             } catch (e: Exception) {
                 emit(
                     Resources.Error<List<GameDb>>(
-                        "couldn't reach to the server,please check your connection"
+                        "couldn't reach to the server,please check your connection",
+                        data = dao.getAllGames()
                     )
+
                 )
             }
         }
