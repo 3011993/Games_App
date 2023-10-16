@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_data">No data show</string>
     <string name="show_more_button">Show more Details</string>
+    <string name="filter_pc_string">Pc Games</string>
+    <string name="filter_browser_string">Browser Games</string>
+    <string name="filter_all_string">All Games</string>
 </resources>

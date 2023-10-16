@@ -30,7 +30,7 @@ class GameListViewModel @Inject constructor(
         getGameList()
     }
 
-    private fun getGameList() {
+    fun getGameList() {
         viewModelScope.launch(Dispatchers.IO) {
             getGameUseCase().collect { result ->
                 when (result) {
@@ -40,6 +40,7 @@ class GameListViewModel @Inject constructor(
                         val data = dao.getAllGames().map { it.toGameModel() }
                         _gameList.postValue(data)
                     }
+
                     is Resources.Loading -> {
                         showLoadingProgress.postValue(true)
                         showError.postValue(false)
@@ -55,4 +56,15 @@ class GameListViewModel @Inject constructor(
 
         }
     }
+
+    fun filterAllGamesByPlatform(value: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val data = dao.filterAllGamesByPlatform(value).map { it.toGameModel() }
+            _gameList.postValue(data)
+        }
+    }
+}
+
+enum class PlatformType(val platform: String) {
+    PC("PC (Windows)"), BROWSER("Web Browser")
 }
