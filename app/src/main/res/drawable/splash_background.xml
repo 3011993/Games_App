@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <item>
+        <color android:color="@color/md_theme_dark_onTertiary" />
+        <shape>
+            <gradient
+                android:angle="315"
+                android:endColor="@color/md_theme_dark_onPrimaryContainer"
+                android:startColor="@color/md_theme_dark_outlineVariant"
+                android:type="linear" />
+        </shape>
+    </item>
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/games_picture" />
+    </item>
+</layer-list>
