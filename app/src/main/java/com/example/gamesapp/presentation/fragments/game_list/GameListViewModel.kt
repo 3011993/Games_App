@@ -30,7 +30,7 @@ class GameListViewModel @Inject constructor(
         getGameList()
     }
 
-    private fun getGameList() {
+    fun getGameList() {
         viewModelScope.launch(Dispatchers.IO) {
             getGameUseCase().collect { result ->
                 when (result) {
