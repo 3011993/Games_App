@@ -25,34 +25,72 @@
             tools:layout_editor_absoluteY="-52dp">
 
 
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/shortDescriptionTitle"
+                style="@style/otherTextStyle"
+                android:textColor="@color/md_theme_dark_primaryContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/description_string"
+                app:layout_constraintBaseline_toBaselineOf="@+id/short_description"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/platformTitle"
+                style="@style/otherTextStyle"
+                android:textColor="@color/md_theme_dark_primaryContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:text="@string/platform_string"
+                app:layout_constraintBaseline_toBaselineOf="@+id/platform"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/genreTitle"
+                style="@style/otherTextStyle"
+                android:textColor="@color/md_theme_dark_primaryContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="356dp"
+                android:text="@string/genre_string"
+                app:layout_constraintBaseline_toBaselineOf="@+id/genre"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
             <ImageView
                 android:id="@+id/imageViewGame"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="22dp"
+                android:layout_marginEnd="24dp"
+                android:contentDescription="@string/image_of_game"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:load_image="@{game.thumbnail}" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/genre"
-                style="@style/bigTextStyle"
+                style="@style/otherTextStyle"
                 android:layout_width="0dp"
-                android:layout_height="62dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="135dp"
+                android:layout_marginTop="2dp"
                 android:text="@{game.genre}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/title" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/title"
-                style="@style/bigTextStyle"
+                style="@style/titleTextStyle"
                 android:layout_width="0dp"
-                android:layout_height="62dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
@@ -61,31 +99,28 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewGame" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/platform"
-                style="@style/bigTextStyle"
+                style="@style/otherTextStyle"
                 android:layout_width="0dp"
-                android:layout_height="62dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="135dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginBottom="16dp"
                 android:text="@{game.platform}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/genre"
                 app:layout_constraintVertical_bias="0.042" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/short_description"
-                style="@style/bigTextStyle"
+                style="@style/otherTextStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginStart="135dp"
+                android:layout_marginTop="2dp"
                 android:lineSpacingExtra="8sp"
                 android:maxLines="4"
                 android:text="@{game.shortDescription}"

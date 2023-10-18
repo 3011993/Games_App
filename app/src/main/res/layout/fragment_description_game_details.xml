@@ -18,27 +18,61 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/cardview_light_background">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/descriptionTitle"
+            style="@style/otherTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/description_string"
+            android:textColor="@color/md_theme_dark_primaryContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/statusTitle" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/developerTitle"
+            style="@style/otherTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/developer_string"
+            android:textColor="@color/md_theme_dark_primaryContainer"
+            app:layout_constraintBaseline_toBaselineOf="@+id/developer"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/statusTitle"
+            style="@style/otherTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/status_string"
+            android:textColor="@color/md_theme_dark_primaryContainer"
+            app:layout_constraintBaseline_toBaselineOf="@+id/status"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/imageViewSpecificGame"
             android:layout_width="0dp"
             android:layout_height="200dp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="36dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="24dp"
+            android:contentDescription="@string/image_of_game"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:load_image="@{specificGame.thumbnail}" />
 
         <TextView
             android:id="@+id/title"
-            style="@style/bigTextStyle"
+            style="@style/titleTextStyle"
             android:layout_width="0dp"
-            android:layout_height="62dp"
+            android:layout_height="40dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
@@ -49,70 +83,92 @@
 
         <TextView
             android:id="@+id/specificGenre"
-            style="@style/bigTextStyle"
+            style="@style/otherTextStyle"
             android:layout_width="0dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="24dp"
             android:text="@{specificGame.genre}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/genreTitle"
             app:layout_constraintTop_toBottomOf="@+id/title" />
 
         <TextView
             android:id="@+id/platform"
-            style="@style/bigTextStyle"
+            style="@style/otherTextStyle"
             android:layout_width="0dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="24dp"
             android:text="@{specificGame.platform}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/platformTitle"
             app:layout_constraintTop_toBottomOf="@+id/specificGenre" />
 
 
         <TextView
             android:id="@+id/developer"
-            style="@style/bigTextStyle"
+            style="@style/otherTextStyle"
             android:layout_width="0dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="24dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="24dp"
             android:text="@{specificGame.developer}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/developerTitle"
             app:layout_constraintTop_toBottomOf="@+id/platform" />
 
         <TextView
             android:id="@+id/status"
-            style="@style/bigTextStyle"
-            android:layout_width="371dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="24dp"
+            style="@style/otherTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="24dp"
             android:text="@{specificGame.status}"
-            app:layout_constraintTop_toBottomOf="@+id/developer"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/statusTitle"
+            app:layout_constraintTop_toBottomOf="@+id/developer" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/platformTitle"
+            style="@style/otherTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/platform_string"
+            android:textColor="@color/md_theme_dark_primaryContainer"
+            app:layout_constraintBaseline_toBaselineOf="@+id/platform"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/genreTitle"
+            style="@style/otherTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/genre_string"
+            android:textColor="@color/md_theme_dark_primaryContainer"
+            app:layout_constraintBaseline_toBaselineOf="@+id/specificGenre"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/full_description"
-            style="@style/bigTextStyle"
+            style="@style/otherTextStyle"
             android:layout_width="0dp"
-            android:layout_height="62dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="24dp"
             android:text="@{specificGame.description}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/status" />
+            app:layout_constraintTop_toBottomOf="@+id/descriptionTitle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

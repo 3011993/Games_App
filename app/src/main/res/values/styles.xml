@@ -30,17 +30,20 @@
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
     </style>
 
-    <style name="bigTextStyle">
+    <style name="titleTextStyle">
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textColor">@color/md_theme_light_onBackground</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:padding">1dp</item>
     </style>
 
-    <style name="smallTextStyle">
+    <style name="otherTextStyle">
         <item name="android:textColor">@color/md_theme_dark_inverseOnSurface</item>
         <item name="android:fontFamily">@font/roboto</item>
-        <item name="android:padding">2dp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:padding">1dp</item>
         <item name="android:textSize">20sp</item>
     </style>
 

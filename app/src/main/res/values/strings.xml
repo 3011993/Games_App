@@ -1,10 +1,14 @@
 <resources>
     <string name="app_name">GamesApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_data">No data show</string>
     <string name="show_more_button">Show more Details</string>
     <string name="filter_pc_string">Pc Games</string>
     <string name="filter_browser_string">Browser Games</string>
     <string name="filter_all_string">All Games</string>
+    <string name="image_of_game">This is Game Image</string>
+    <string name="genre_string">Genre:</string>
+    <string name="platform_string">Platform:</string>
+    <string name="description_string">Description:</string>
+    <string name="developer_string">Developer:</string>
+    <string name="status_string">Status:</string>
 </resources>
