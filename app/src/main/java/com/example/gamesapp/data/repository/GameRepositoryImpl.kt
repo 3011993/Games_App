@@ -33,7 +33,7 @@ class GameRepositoryImpl @Inject constructor(
             } catch (e: Exception) {
                 emit(
                     Resources.Error<List<GameDb>>(
-                        "couldn't reach to the server,please check your connection",
+                        "Please check your connection to update the list!",
                         data = dao.getAllGames()
                     )
 
@@ -59,7 +59,7 @@ class GameRepositoryImpl @Inject constructor(
             } catch (e: Exception) {
                 emit(
                     Resources.Error<SpecificGameModel>(
-                        "couldn't reach to the server,please check your connection"
+                        "Please check your connection to get Details!"
                     )
                 )
             }

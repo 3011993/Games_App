@@ -20,8 +20,6 @@ fun GameDb.toGameModel() : GameModel {
         id = id,
         title = title,
         thumbnail = thumbnail,
-        genre = genre,
-        shortDescription = shortDescription,
         platform = platform
     )
 }

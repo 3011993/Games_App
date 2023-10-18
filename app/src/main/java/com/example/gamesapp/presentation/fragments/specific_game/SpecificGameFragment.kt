@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -29,7 +30,9 @@ class SpecificGameFragment : BaseFragment<FragmentDescriptionGameDetailsBinding>
 
         viewModel.getSpecificGame(id.toString())
 
-
+        viewModel.errorText.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+        }
         viewModel.specificGame.observe(viewLifecycleOwner) {
             binding.specificGame = it
         }
