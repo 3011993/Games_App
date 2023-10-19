@@ -10,7 +10,6 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.gamesapp.base.BaseFragment
 import com.example.gamesapp.R
 import com.example.gamesapp.common.NavigationCommand
@@ -27,15 +26,12 @@ class GamesListFragment : BaseFragment<FragmentGamesHomeBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         val listener = GameLiveListAdapter.OnClickListener { game ->
             viewModel.navigationCommand.value =
                 NavigationCommand.To(
                     GamesListFragmentDirections.actionGamesHomeFragmentToDescriptionGameDetails(game.id)
                 )
         }
-
 
         val adapter = GameLiveListAdapter(listener)
         binding.lifecycleOwner = this
@@ -57,7 +53,6 @@ class GamesListFragment : BaseFragment<FragmentGamesHomeBinding>() {
             binding.swipeRefreshLayout.isRefreshing = false
         }
     }
-
 
     private fun filterGamesMenu(menuHost: MenuHost) {
         menuHost.addMenuProvider(object : MenuProvider {
@@ -84,5 +79,4 @@ class GamesListFragment : BaseFragment<FragmentGamesHomeBinding>() {
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
-
 }
