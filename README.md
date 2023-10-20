@@ -1,6 +1,6 @@
 # Games_App
-Game App which gets game Information from API Server and cache them
-This Application is Built with clean architecture using new technologies 
+Game App which gets game Information from API Server and cache them.
+This Application is Built with clean architecture using new technologies,
 This App uses jetpack libraries like Navigation components, Data Binding, and Work Manager
 Usage
 the user can install this application to follow the latest games and enjoy them 
