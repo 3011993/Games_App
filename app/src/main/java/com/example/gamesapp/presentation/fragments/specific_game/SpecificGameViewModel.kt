@@ -28,14 +28,18 @@ class SpecificGameViewModel @Inject constructor(
                 when (result) {
                     is Resources.Success -> {
                         _specificGame.value = result.data!!
+                        showLoadingProgress.value = false
                     }
 
                     is Resources.Loading -> {
                         showLoadingProgress.value = true
+
                     }
 
                     is Resources.Error -> {
                         errorText.value = result.message
+                        showLoadingProgress.value = false
+
                     }
                 }
             }
