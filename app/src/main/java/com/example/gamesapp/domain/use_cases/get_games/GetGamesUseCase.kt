@@ -7,6 +7,5 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class GetGamesUseCase @Inject constructor(private val repository: GameRepository) {
-
     suspend operator fun invoke() : Flow<Resources<List<GameDb>>> = repository.getGameList()
 }

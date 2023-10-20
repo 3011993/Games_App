@@ -11,4 +11,5 @@
     <string name="description_string">Description:</string>
     <string name="developer_string">Developer:</string>
     <string name="status_string">Status:</string>
+    <string name="specific_game_error">There\'s no connection</string>
 </resources>

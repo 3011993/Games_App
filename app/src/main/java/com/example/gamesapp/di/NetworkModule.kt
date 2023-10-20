@@ -1,6 +1,5 @@
 package com.example.gamesapp.di
 
-
 import com.example.gamesapp.common.Constants
 import com.example.gamesapp.data.remote.GamesApi
 import dagger.Module
@@ -15,7 +14,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-
     @Provides
     @Singleton
     fun provideApiService(): GamesApi {
@@ -24,6 +22,4 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(GamesApi::class.java)
     }
-
-
 }

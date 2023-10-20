@@ -13,7 +13,6 @@ import com.example.gamesapp.common.NavigationCommand
 
 abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
 
-
     abstract val viewModel: BaseViewModel
 
     @LayoutRes
@@ -34,8 +33,6 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
 
     override fun onStart() {
         super.onStart()
-
-
         viewModel.navigationCommand.observe(viewLifecycleOwner) { command ->
             when (command) {
                 is NavigationCommand.To -> findNavController().navigate(command.directions)
@@ -45,8 +42,6 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
                     false
                 )
             }
-
         }
-    };
-
+    }
 }

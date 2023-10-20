@@ -27,6 +27,6 @@ fun RecyclerView.submitList(list: List<GameModel>?) {
 }
 
 @BindingAdapter("setVisibility")
-fun View.setVisibility(value : Boolean){
-    visibility = if(value) View.VISIBLE else View.INVISIBLE
+fun View.setVisibility(value: Boolean) {
+    visibility = if (value) View.VISIBLE else View.INVISIBLE
 }

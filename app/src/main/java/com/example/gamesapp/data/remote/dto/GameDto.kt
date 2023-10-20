@@ -1,7 +1,6 @@
 package com.example.gamesapp.data.remote.dto
 
 import com.example.gamesapp.data.db.GameDb
-import com.example.gamesapp.domain.model.GameModel
 import com.google.gson.annotations.SerializedName
 
 data class GameDto(
@@ -18,7 +17,6 @@ data class GameDto(
     val platform: String
 )
 
-
 fun List<GameDto>.toGameDatabase(): Array<GameDb> {
     return map {
         GameDb(
@@ -30,5 +28,4 @@ fun List<GameDto>.toGameDatabase(): Array<GameDb> {
             platform = it.platform
         )
     }.toTypedArray()
-
 }

@@ -19,6 +19,5 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
         DataBindingUtil.setContentView<T>(this, getLayoutRes()).apply {
             binding = this
         }
-
     }
 }

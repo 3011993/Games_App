@@ -40,7 +40,6 @@ class GameRepositoryImpl @Inject constructor(
                 )
             }
         }
-
     }
 
     override suspend fun getSpecificGame(gameId: String): Flow<Resources<SpecificGameModel>> {
@@ -55,7 +54,6 @@ class GameRepositoryImpl @Inject constructor(
                         e.message ?: "An unexpected error occurred"
                     )
                 )
-
             } catch (e: Exception) {
                 emit(
                     Resources.Error<SpecificGameModel>(

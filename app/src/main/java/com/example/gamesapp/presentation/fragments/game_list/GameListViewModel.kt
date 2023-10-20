@@ -20,8 +20,7 @@ class GameListViewModel @Inject constructor(
     application: Application,
     private val dao: GameDao,
     private val getGameUseCase: GetGamesUseCase
-) :
-    BaseViewModel(application) {
+) : BaseViewModel(application) {
 
     private val _gameList = MutableLiveData<List<GameModel>>()
     val gameList: LiveData<List<GameModel>> = _gameList

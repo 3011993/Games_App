@@ -10,12 +10,10 @@ import com.example.gamesapp.R
 import com.example.gamesapp.databinding.LiveGameRowBinding
 import com.example.gamesapp.domain.model.GameModel
 
-
 class GameLiveListAdapter(private val onClickListener: OnClickListener) :
     ListAdapter<GameModel, GameLiveListAdapter.GameLiveViewHolder>(
         diffCallBack
     ) {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameLiveViewHolder {
         return GameLiveViewHolder(
@@ -33,18 +31,13 @@ class GameLiveListAdapter(private val onClickListener: OnClickListener) :
         holder.binding.showMoreButton.setOnClickListener {
             onClickListener.setOnClickListener(currentItem)
         }
-
-
     }
 
     class OnClickListener(val clickListener: (game: GameModel) -> Unit) {
         fun setOnClickListener(game: GameModel) = clickListener(game)
-
     }
 
-
     class GameLiveViewHolder(view: View) : BaseViewHolder<LiveGameRowBinding>(view)
-
 
     companion object {
         private val diffCallBack: DiffUtil.ItemCallback<GameModel> =
@@ -64,6 +57,5 @@ class GameLiveListAdapter(private val onClickListener: OnClickListener) :
                 }
             }
     }
-
 
 }

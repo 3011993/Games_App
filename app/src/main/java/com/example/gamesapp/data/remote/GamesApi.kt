@@ -8,9 +8,7 @@ import retrofit2.http.Query
 const val GET_GAME_QUERY = "api/games"
 const val GET_SPECIFIC_GAME_QUERY = "api/game?id"
 
-
 interface GamesApi {
-
     @GET(GET_GAME_QUERY)
     suspend fun getLiveGamesList(): List<GameDto>
 

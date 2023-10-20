@@ -1,7 +1,6 @@
 package com.example.gamesapp.presentation.fragments.specific_game
 
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -22,29 +21,19 @@ class SpecificGameFragment : BaseFragment<FragmentDescriptionGameDetailsBinding>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.lifecycleOwner = this
-
-
         val id = SpecificGameFragmentArgs.fromBundle(requireArguments()).id
-
         viewModel.getSpecificGame(id.toString())
-
         viewModel.errorText.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
         }
         viewModel.specificGame.observe(viewLifecycleOwner) {
             binding.specificGame = it
         }
-
-
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.onNavDestinationSelected(item, requireView().findNavController()) ||
                 super.onOptionsItemSelected(item)
     }
-
-
 }
 
